@@ -6,13 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Logout extends AppCompatActivity {
+public class LogoutActivity extends AppCompatActivity {
+
+
+
     private Button btnLogout;
     private Session session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.logout);
+        setContentView(R.layout.activity_logout);
 
         session = new Session(this);
         if(!session.loggedin()){
@@ -30,6 +33,6 @@ public class Logout extends AppCompatActivity {
     private void logout(){
         session.setLoggedin(false);
         finish();
-        startActivity(new Intent(Logout.this,LoginActivity.class));
+        startActivity(new Intent(LogoutActivity.this,LoginActivity.class));
     }
 }

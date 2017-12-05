@@ -1,29 +1,26 @@
-package com.techobbyist.signuplogin;
+package com.techobbyist.HouseHold;
 
 import android.app.Activity;
-import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class AddImageActivity extends AppCompatActivity {
+public class AddImageActivity extends AppCompatActivity  {
 
     ImageView ivImage;
+    ImageButton next;
     Integer REQUEST_CAMERA=1, SELECT_FILE=0;
 
     @Override
@@ -34,8 +31,10 @@ public class AddImageActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ivImage = (ImageView) findViewById(R.id.ivImage);
+        next = (ImageButton) findViewById(R.id.next);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,7 +42,23 @@ public class AddImageActivity extends AppCompatActivity {
                 SelectImage();
             }
         });
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(AddImageActivity.this,menu.class));
+                finish();
+
+            }
+        });
+
+      
     }
+
+
+
+
 
     private void SelectImage(){
 
@@ -115,5 +130,10 @@ public class AddImageActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public  void next(){
+        startActivity(new Intent(AddImageActivity.this, menu.class));
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.techobbyist.signuplogin.AddImageActivity">
+    tools:context="com.techobbyist.HouseHold.AddImageActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -25,10 +25,28 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="bottom|left"
         android:layout_margin="@dimen/fab_margin"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="bottom|left"
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
-    <include layout="@layout/content_add_image" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_add_image" />
+
+    <ImageButton
+        android:id="@+id/next"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_vertical|left"
+        android:layout_marginBottom="34dp"
+        android:onClick="next"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="bottom|right"
+        app:srcCompat="@drawable/nextttt" />
 
 </android.support.design.widget.CoordinatorLayout>
