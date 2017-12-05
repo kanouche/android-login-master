@@ -19,4 +19,9 @@ public class Tab3Fragment extends Fragment {
         View view = inflater.inflate(R.layout.tab3_fragment,container,false);
         return view;
     }
+
+
+
+
+
 }

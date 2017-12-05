@@ -94,6 +94,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             startActivity(new Intent(RegisterActivity.this,AddImageActivity.class));
             finish();
             helper.insertContact(c);
+
             displayToast("Thank you for register with us ,Household Manager ");
             finish();
         }
@@ -102,4 +103,5 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private void displayToast(String message){
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
+
 }
