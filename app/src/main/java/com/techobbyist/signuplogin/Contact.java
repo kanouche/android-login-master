@@ -1,4 +1,4 @@
-package com.techobbyist.signuplogin;
+package com.techobbyist.HouseHold;
 
 /**
  * Created by Acer on 11/27/2017.
@@ -9,7 +9,7 @@ public class Contact {
 
     private String name,username,email,sexe,password;
     private boolean isAdmin;
-
+    private int nbrOfTask =0;
 
     public boolean isAdmin() {
         return isAdmin;
@@ -22,6 +22,8 @@ public class Contact {
     public String getName() {
         return name;
     }
+
+    public  int getNbrOfTaskCalculator(){return nbrOfTask; }
 
     public String getPassword() {
         return password;
@@ -57,6 +59,10 @@ public class Contact {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public void setNbrOfTask(String username) {
+        this.nbrOfTask = nbrOfTask;
     }
 }
 
